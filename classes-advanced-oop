@@ -1,0 +1,116 @@
+class Car():
+    
+    def __init__(self, make, model, year): # positional parameters & mandatory
+        self.make = make
+        self.model = model
+        self.year = year
+        
+    def get_descriptive_name(self):
+        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        return long_name.title()
+    
+my_new_car = Car('audi', 'a4', 2016)
+print(my_new_car.get_descriptive_name())
+2016 Audi A4
+class Car():
+    
+    def __init__(self, make, model, year): # positional parameters & mandatory
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0 #default attribute
+        
+    def read_odometer(self):
+        current_odometer_reading = self.odometer_reading
+        return current_odometer_reading
+        
+    def get_descriptive_name(self):
+        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        return long_name.title()
+    
+    def update_odometer(self, mileage):
+        self.odometer_reading = mileage
+    
+my_new_car = Car('audi', 'a4', 2016) # object created
+print(my_new_car.get_descriptive_name())
+2016 Audi A4
+your_new_car = Car('BMW', 'succi', 2019)
+print(my_new_car.read_odometer())
+print(your_new_car.read_odometer())
+0
+0
+changing default attribute's value
+changing the value directly
+changing the value via function
+my_new_car.odometer_reading = 50   #changing variable
+print(my_new_car.read_odometer())
+50
+your_new_car.read_odometer()
+0
+your_new_car.odometer_reading = 100
+print(my_new_car.read_odometer())
+print(your_new_car.read_odometer())
+50
+100
+my_new_car.update_odometer(500)
+print(my_new_car.read_odometer())
+500
+your_new_car.update_odometer(1000)
+print(your_new_car.read_odometer())
+1000
+class Restaurant():
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        
+    def describe_restaurant(self):
+        print(f'The name of the restaurant is {self.restaurant_name} and cuisine type is {self.cuisine_type}')
+        
+    def open_restaurant(self):
+        print('The restaurant is open!')
+    
+restaurant = Restaurant('Lavish dine', 'Pakistani')
+print(restaurant.describe_restaurant())
+print(restaurant.open_restaurant())
+The name of the restaurant is Lavish dine and cuisine type is Pakistani
+None
+Lavish dine is open!
+None
+class Restaurant():
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+        
+    def set_number_served(self, customers):
+        self.number_served = customers
+       
+    def increment_number_served(self, customers):
+        self.number_served += customers
+        
+    def get_number_served(self):
+        print(f'The number of customers served is {self.number_served}')
+                
+    def describe_restaurant(self):
+        print(f'The name of the restaurant is {self.restaurant_name} and cuisine type is {self.cuisine_type}')
+        
+    def open_restaurant(self):
+        print(f'{self.restaurant_name} is open!')
+    
+restaurant = Restaurant('Lavish dine', 'Pakistani')
+restaurant.restaurant_name
+'Lavish dine'
+restaurant.cuisine_type
+'Pakistani'
+restaurant.number_served
+0
+restaurant.set_number_served(25) # changing default value by calling fucntions
+restaurant.get_number_served() # accessing default value by calling functions
+The number of customers served is 25
+restaurant.increment_number_served(12)
+restaurant.get_number_served()
+The number of customers served is 61
+restaurant.describe_restaurant()
+The name of the restaurant is Lavish dine and cuisine type is Pakistani
+restaurant.open_restaurant()
+Lavish dine is open!
