@@ -26,7 +26,7 @@ class Student():
         self.age = age
         self.classes = classes
         self.bloodgroup = bloodgroup
-std1 = Student(1101, 'Noor', 'female', 20, 'biology', 'o+ve')
+std1 = Student(1101, 'Wafa', 'female', 20, 'biology', 'o+ve')
 std1.name
-'Noor'
+'Wafa'
  
